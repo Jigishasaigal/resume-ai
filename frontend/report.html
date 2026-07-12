@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeAI | Analysis Report</title>
+
+    <link
+        rel="stylesheet"
+        href="css/report.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>ResumeAI</h1>
+
+    <div>
+
+        <button
+            onclick="window.location.href='dashboard.html'">
+
+            Dashboard
+
+        </button>
+
+        <button
+            onclick="window.location.href='resume.html'">
+
+            Analyze Another Resume
+
+        </button>
+
+    </div>
+
+</header>
+
+<div class="container report-layout">
+
+    <div class="card">
+
+        <h2>
+
+            Resume Analysis Report
+
+        </h2>
+
+        <h1 id="atsScore">
+
+            0%
+
+        </h1>
+
+        <hr>
+
+        <h3>
+
+            Score Breakdown
+
+        </h3>
+
+        <div id="scoreBreakdown">
+
+        </div>
+
+        <hr>
+
+        <h3>
+
+            Matched Skills
+
+        </h3>
+
+        <ul id="matchedSkills">
+
+        </ul>
+
+        <hr>
+
+        <h3>
+
+            Required Skills Missing
+
+        </h3>
+
+        <ul id="requiredMissingSkills">
+
+        </ul>
+
+        <hr>
+
+        <h3>
+
+            Optional Skills Missing
+
+        </h3>
+
+        <ul id="optionalMissingSkills">
+
+        </ul>
+
+        <hr>
+
+        <h3>
+
+            Suggestions
+
+        </h3>
+
+        <ul id="suggestions">
+
+        </ul>
+
+    </div>
+
+    <div class="card preview-card">
+
+        <h2>
+
+            Original Resume
+
+        </h2>
+
+        <div id="previewStatus" class="preview-status">
+
+            Loading resume preview...
+
+        </div>
+
+        <iframe
+            id="resumePreview"
+            title="Resume Preview"
+            style="display:none;">
+
+        </iframe>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/report.js"></script>
+
+</body>
+
+</html>

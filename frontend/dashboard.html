@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeAI Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>ResumeAI</h2>
+
+        <a
+            href="dashboard.html"
+            class="active">
+
+            🏠 Dashboard
+
+        </a>
+
+        <a href="resume.html">
+
+            📄 Resume Groups
+
+        </a>
+
+        <a href="comparison.html">
+
+            ⚖ Compare Resume
+
+        </a>
+
+        <a href="applications.html">
+
+            💼 Applications
+
+        </a>
+
+        <a href="profile.html">
+
+            👤 Profile
+
+        </a>
+
+        <a
+            href="#"
+            id="logoutBtn">
+
+            🚪 Logout
+
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <!-- Navbar -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome back,
+
+                    <span id="userName">
+
+                        User
+
+                    </span>
+
+                    👋
+
+                </p>
+
+            </div>
+
+            <div class="user-box">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="window.location.href='resume.html'">
+
+                    + Upload Resume
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="grid">
+
+            <div class="card stat">
+
+                <h2 id="groupCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Resume Groups
+
+                </p>
+
+            </div>
+
+            <div class="card stat">
+
+                <h2 id="versionCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Resume Versions
+
+                </p>
+
+            </div>
+
+            <div class="card stat">
+
+                <h2 id="applicationCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Applications
+
+                </p>
+
+            </div>
+
+            <div class="card stat">
+
+                <h2 id="averageATS">
+
+                    0%
+
+                </h2>
+
+                <p>
+
+                    Average ATS
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Quick Actions -->
+
+        <div class="section">
+
+            <h2>
+
+                Quick Actions
+
+            </h2>
+
+            <br>
+
+            <button
+                class="btn btn-primary"
+                onclick="window.location.href='resume.html'">
+
+                Upload Resume
+
+            </button>
+
+            <button
+                class="btn btn-success"
+                onclick="window.location.href='comparison.html'">
+
+                Compare Resumes
+
+            </button>
+
+            <button
+                class="btn btn-warning"
+                onclick="window.location.href='applications.html'">
+
+                Applications
+
+            </button>
+
+        </div>
+
+        <!-- Resume Groups -->
+
+        <div class="section">
+
+            <h2>
+
+                Resume Groups
+
+            </h2>
+
+            <br>
+
+            <div
+                id="resumeGroups"
+                class="grid">
+
+            </div>
+
+        </div>
+
+        <!-- Recent Resume Versions -->
+
+        <div class="section">
+
+            <h2>
+
+                Recent Resume Versions
+
+            </h2>
+
+            <br>
+
+            <div
+                id="history">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Comparison</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/resume.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+
+            ResumeAI
+
+        </h2>
+
+        <a href="dashboard.html">
+
+            🏠 Dashboard
+
+        </a>
+
+        <a href="resume.html">
+
+            📄 Resume Groups
+
+        </a>
+
+        <a
+            href="comparison.html"
+            class="active">
+
+            ⚖ Compare Resume
+
+        </a>
+
+        <a href="applications.html">
+
+            💼 Applications
+
+        </a>
+
+        <a href="profile.html">
+
+            👤 Profile
+
+        </a>
+
+        <a
+            href="#"
+            onclick="logout()">
+
+            🚪 Logout
+
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="navbar">
+
+            <div>
+
+                <h1>
+
+                    Compare Resumes
+
+                </h1>
+
+                <p>
+
+                    Compare two resumes against the same job description.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>
+
+                Compare Two Resumes
+
+            </h2>
+
+            <label>
+
+                Resume 1
+
+            </label>
+
+            <input
+                type="file"
+                id="resume1"
+                accept=".pdf">
+
+            <label>
+
+                Resume 2
+
+            </label>
+
+            <input
+                type="file"
+                id="resume2"
+                accept=".pdf">
+
+            <textarea
+                id="jobDescription"
+                rows="10"
+                placeholder="Paste Job Description"
+            ></textarea>
+
+            <button id="compareBtn" class="btn btn-primary">
+
+                Compare
+
+            </button>
+
+        </div>
+
+        <div
+            id="result"
+            class="card"
+            style="display:none">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/comparison.js"></script>
+
+</body>
+
+</html>

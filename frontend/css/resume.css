@@ -1,0 +1,335 @@
+/* ===========================
+   Navbar
+=========================== */
+.navbar h1{
+    font-size:28px;
+    color:var(--text);
+}
+
+.navbar p{
+    margin-top:8px;
+    color:var(--text-dim);
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card{
+    margin-bottom:26px;
+    transition:.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   Title Row
+=========================== */
+.title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.title-row h2{
+    color:var(--text);
+}
+
+/* ===========================
+   Labels
+=========================== */
+label{
+    display:block;
+    margin-bottom:8px;
+    margin-top:18px;
+    font-weight:500;
+    color:var(--text-dim);
+    font-size:13.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+
+/* ===========================
+   Upload Input
+=========================== */
+input[type="file"]{
+    background:rgba(255,255,255,.02);
+    border:2px dashed var(--border);
+    padding:18px;
+    cursor:pointer;
+    color:var(--text-dim);
+    border-radius:var(--radius-sm);
+}
+
+input[type="file"]:hover{
+    border-color:var(--violet);
+    background:rgba(139,124,255,.05);
+}
+
+/* ===========================
+   Textarea
+=========================== */
+textarea{
+    resize:vertical;
+    min-height:200px;
+    font-family:var(--font-body);
+}
+
+/* ===========================
+   Analyze Button
+=========================== */
+#analyzeBtn,
+#compareBtn{
+    margin-top:20px;
+    width:100%;
+    font-size:15.5px;
+}
+
+/* ===========================
+   ATS Score readout
+=========================== */
+.score-box{
+    text-align:center;
+    margin:34px 0;
+    position:relative;
+}
+
+.score-box span{
+    color:var(--text-dim);
+    font-size:13.5px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.score-box h1{
+    font-family:var(--font-mono);
+    font-size:64px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.score-box h1.score-low{
+    color:var(--rose);
+    text-shadow:0 0 30px rgba(255,107,129,.35);
+}
+
+.score-box h1.score-mid{
+    color:var(--amber);
+    text-shadow:0 0 30px rgba(245,184,78,.35);
+}
+
+.score-box h1.score-high{
+    color:var(--teal);
+    text-shadow:0 0 30px rgba(51,224,189,.35);
+}
+
+/* ===========================
+   Results
+=========================== */
+.result-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:30px;
+}
+
+.result-grid h3{
+    margin-bottom:14px;
+    color:var(--violet);
+    font-size:15px;
+}
+
+.result-grid ul{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--border-soft);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    min-height:170px;
+}
+
+.result-grid li{
+    margin-bottom:10px;
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+/* ===========================
+   Suggestions
+=========================== */
+#suggestions{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--border-soft);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    margin-top:15px;
+}
+
+#suggestions li{
+    margin-bottom:12px;
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+/* ===========================
+   Divider
+=========================== */
+hr{
+    border:none;
+    border-top:1px solid var(--border-soft);
+    margin:28px 0;
+}
+
+/* ===========================
+   Success Animation
+=========================== */
+#resultCard,
+#result{
+    animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media(max-width:768px){
+    .title-row{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .result-grid{
+        grid-template-columns:1fr;
+    }
+    .score-box h1{
+        font-size:48px;
+    }
+}
+
+/* ===========================
+   Comparison Result (plain injected markup)
+=========================== */
+#result h2{
+    margin-bottom:14px;
+    color:var(--text);
+    font-size:20px;
+}
+
+#result h3{
+    margin-top:22px;
+    margin-bottom:10px;
+    color:var(--violet);
+    font-size:15px;
+}
+
+#result ul{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+    padding:16px 20px;
+    list-style:none;
+}
+
+#result li{
+    padding:6px 0;
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+#result hr{
+    border:none;
+    border-top:1px solid var(--border-soft);
+    margin:22px 0;
+}
+
+/* ===========================
+   Header (comparison.html uses a plain
+   header instead of the sidebar layout)
+=========================== */
+header{
+    background:rgba(15,19,28,.7);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border-soft);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+}
+
+header h1{
+    font-family:var(--font-display);
+    font-size:20px;
+    font-weight:700;
+    background:linear-gradient(135deg,var(--violet),var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+header button{
+    background:transparent;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:13.5px;
+    transition:.2s ease;
+}
+
+header button:hover{
+    color:var(--text);
+    border-color:var(--violet);
+    background:rgba(139,124,255,.08);
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+/* ===========================
+   Required vs Optional Missing Skills
+=========================== */
+#requiredMissingSkills{
+    border-left:3px solid var(--rose);
+}
+
+#requiredMissingSkills li{
+    color:var(--text);
+}
+
+#requiredMissingSkills li::marker{
+    color:var(--rose);
+}
+
+#optionalMissingSkills{
+    border-left:3px solid var(--border);
+    opacity:.75;
+    background:rgba(255,255,255,.03);
+    border-radius:10px;
+    padding:16px 20px;
+    list-style:none;
+}
+
+#optionalMissingSkills li{
+    color:var(--text-dim);
+    font-size:13.5px;
+}
+
+#optionalMissingSkills li::marker{
+    color:var(--text-faint, var(--text-dim));
+}

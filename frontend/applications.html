@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        ResumeAI | Job Applications
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/applications.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+
+            ResumeAI
+
+        </h2>
+
+        <a href="dashboard.html">
+
+            🏠 Dashboard
+
+        </a>
+
+        <a href="resume.html">
+
+            📄 Resume Groups
+
+        </a>
+
+        <a href="comparison.html">
+
+            ⚖ Compare Resume
+
+        </a>
+
+        <a
+            href="applications.html"
+            class="active">
+
+            💼 Applications
+
+        </a>
+
+        <a href="profile.html">
+
+            👤 Profile
+
+        </a>
+
+        <a
+            href="#"
+            onclick="logout()">
+
+            🚪 Logout
+
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="navbar">
+
+            <div>
+
+                <h1>
+
+                    Job Applications
+
+                </h1>
+
+                <p>
+
+                    Track every job you've applied for.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="stats-grid">
+
+            <div class="card stat-card">
+
+                <h2 id="totalApplications">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Total Applications
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="interviewCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Interviews
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="offerCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Offers
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="rejectedCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Rejected
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Toolbar -->
+
+        <div class="card">
+
+            <div class="toolbar">
+
+                <input
+
+                    type="text"
+
+                    id="searchBox"
+
+                    placeholder="Search company or role..."
+
+                >
+
+                <button
+
+                    id="addApplicationBtn"
+
+                    class="btn btn-primary">
+
+                    + Add Application
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Applications -->
+
+        <div
+            id="applicationsList">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ====================================
+        Application Modal
+==================================== -->
+
+<div
+    id="applicationModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <h2
+            id="modalTitle">
+
+            Add Application
+
+        </h2>
+
+        <input
+            type="hidden"
+            id="applicationId">
+
+        <label>
+
+            Company Name
+
+        </label>
+
+        <input
+            type="text"
+            id="companyName">
+
+        <label>
+
+            Job Role
+
+        </label>
+
+        <input
+            type="text"
+            id="jobRole">
+
+        <label>
+
+            Status
+
+        </label>
+
+        <select id="applicationStatus">
+
+            <option value="Applied">Applied</option>
+
+            <option value="Assessment">Assessment</option>
+
+            <option value="Interview">Interview</option>
+
+            <option value="Offer">Offer</option>
+
+            <option value="Rejected">Rejected</option>
+
+            <option value="Other">Other (type manually)</option>
+
+        </select>
+
+        <input
+            type="text"
+            id="applicationStatusOther"
+            placeholder="Enter custom status"
+            style="display:none;">
+
+        <label>
+
+            Job Link
+
+        </label>
+
+
+        <input
+            type="url"
+            id="jobLink">
+
+        <div class="modal-buttons">
+
+            <button
+                class="btn btn-primary"
+                id="saveApplicationBtn">
+
+                Save
+
+            </button>
+
+            <button
+                class="btn btn-danger"
+                id="cancelApplicationBtn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/applications.js"></script>
+
+</body>
+
+</html>

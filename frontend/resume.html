@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        ResumeAI | Resume Management
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/resume.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+
+            ResumeAI
+
+        </h2>
+
+        <a href="dashboard.html">
+
+            🏠 Dashboard
+
+        </a>
+
+        <a
+            href="resume.html"
+            class="active">
+
+            📄 Resume Groups
+
+        </a>
+
+        <a href="comparison.html">
+
+            ⚖ Compare Resume
+
+        </a>
+
+        <a href="applications.html">
+
+            💼 Applications
+
+        </a>
+
+        <a href="profile.html">
+
+            👤 Profile
+
+        </a>
+
+        <a
+            href="#"
+            onclick="logout()">
+
+            🚪 Logout
+
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <!-- Navbar -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h1>
+
+                    Resume Management
+
+                </h1>
+
+                <p>
+
+                    Create Resume Groups and upload Resume Versions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Resume Groups -->
+
+        <div class="card">
+
+            <div class="title-row">
+
+                <h2>
+
+                    Resume Groups
+
+                </h2>
+
+                <button
+                    class="btn btn-primary"
+                    id="createGroupBtn">
+
+                    + New Group
+
+                </button>
+
+            </div>
+
+            <br>
+
+            <label>
+
+                Select Resume Group
+
+            </label>
+
+            <select id="groupSelect">
+
+                <option>
+
+                    Loading...
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Upload -->
+
+        <div class="card section">
+
+            <h2>
+
+                Upload Resume Version
+
+            </h2>
+
+            <br>
+
+            <label>
+
+                Resume PDF
+
+            </label>
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".pdf">
+
+            <label>
+
+                Job Description
+
+            </label>
+
+            <textarea
+
+                id="jobDescription"
+
+                rows="10"
+
+                placeholder="Paste Job Description here..."
+
+            ></textarea>
+
+            <label>
+
+                Version Name (optional)
+
+            </label>
+
+            <input
+                type="text"
+                id="versionName"
+                placeholder="e.g. Google Application Draft">
+
+            <button
+
+                id="analyzeBtn"
+
+                class="btn btn-primary">
+
+                Analyze & Save Version
+
+            </button>
+
+        </div>
+
+        <!-- Result -->
+
+        <div
+
+            id="resultCard"
+
+            class="card section"
+
+            style="display:none;">
+
+            <h2>
+
+                ATS Analysis Result
+
+            </h2>
+
+            <br>
+
+            <div class="score-box">
+
+                <span>
+
+                    ATS Score
+
+                </span>
+
+                <h1 id="atsScore">
+
+                    0%
+
+                </h1>
+
+            </div>
+
+            <hr>
+
+            <h3>
+
+                Score Breakdown
+
+            </h3>
+
+            <div id="scoreBreakdown">
+
+            </div>
+
+            <hr>
+
+            <div class="result-grid">
+
+                <div>
+
+                    <h3>
+
+                        Matched Skills
+
+                    </h3>
+
+                    <ul
+                        id="matchedSkills">
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Required Skills Missing
+
+                    </h3>
+
+                    <ul
+                        id="requiredMissingSkills">
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div>
+
+                <h3>
+
+                    Optional Skills Missing
+
+                </h3>
+
+                <ul
+                    id="optionalMissingSkills">
+
+                </ul>
+
+            </div>
+
+            <br>
+
+            <div>
+
+                <h3>
+
+                    Suggestions
+
+                </h3>
+
+                <ul
+                    id="suggestions">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/resume.js"></script>
+
+</body>
+
+</html>

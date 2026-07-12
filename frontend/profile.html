@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        ResumeAI | Profile
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/profile.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+
+            ResumeAI
+
+        </h2>
+
+        <a href="dashboard.html">
+
+            🏠 Dashboard
+
+        </a>
+
+        <a href="resume.html">
+
+            📄 Resume Groups
+
+        </a>
+
+        <a href="comparison.html">
+
+            ⚖ Compare Resume
+
+        </a>
+
+        <a href="applications.html">
+
+            💼 Applications
+
+        </a>
+
+        <a
+            href="profile.html"
+            class="active">
+
+            👤 Profile
+
+        </a>
+
+        <a
+            href="#"
+            onclick="logout()">
+
+            🚪 Logout
+
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <h1>
+
+            My Profile
+
+        </h1>
+
+        <p class="subtitle">
+
+            Manage your ResumeAI account.
+
+        </p>
+
+        <!-- Profile -->
+
+        <div class="profile-card card">
+
+            <div class="avatar">
+
+                <span id="avatarLetter">
+
+                    U
+
+                </span>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h2 id="userName">
+
+                    Loading...
+
+                </h2>
+
+                <p id="userEmail">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Personal Details -->
+
+        <div class="card">
+
+            <h2>
+
+                Personal Information
+
+            </h2>
+
+            <div class="details-grid">
+
+                <div>
+
+                    <label>College</label>
+
+                    <p id="college">
+
+                        -
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <label>Branch</label>
+
+                    <p id="branch">
+
+                        -
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <label>Year</label>
+
+                    <p id="year">
+
+                        -
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats-grid">
+
+            <div class="card stat-card">
+
+                <h2 id="groupCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Resume Groups
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="versionCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Resume Versions
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="averageATS">
+
+                    0%
+
+                </h2>
+
+                <p>
+
+                    Average ATS
+
+                </p>
+
+            </div>
+
+            <div class="card stat-card">
+
+                <h2 id="applicationCount">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Applications
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Quick Actions -->
+
+        <div class="card">
+
+            <h2>
+
+                Quick Actions
+
+            </h2>
+
+            <div class="actions">
+
+                <a
+                    href="resume.html"
+                    class="btn btn-primary">
+
+                    Manage Resumes
+
+                </a>
+
+                <a
+                    href="applications.html"
+                    class="btn btn-secondary">
+
+                    Applications
+
+                </a>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="logout()">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>

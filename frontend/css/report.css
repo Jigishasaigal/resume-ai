@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+:root{
+    --bg:#0a0d14;
+    --panel:rgba(255,255,255,.05);
+    --border:rgba(255,255,255,.1);
+    --border-soft:rgba(255,255,255,.06);
+    --text:#e8eaf1;
+    --text-dim:#9198ac;
+    --violet:#8b7cff;
+    --violet-dim:#6a5bd6;
+    --teal:#33e0bd;
+    --amber:#f5b84e;
+    --rose:#ff6b81;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(139,124,255,.14), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(51,224,189,.10), transparent 45%),
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:auto,auto,42px 42px,42px 42px;
+}
+
+header{
+    background:rgba(15,19,28,.7);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border-soft);
+    color:var(--text);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+}
+
+header h1{
+    font-family:'Sora',sans-serif;
+    font-size:20px;
+    font-weight:700;
+    background:linear-gradient(135deg,var(--violet),var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+header button{
+    background:transparent;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-left:10px;
+    font-size:13.5px;
+    transition:.2s ease;
+}
+
+header button:hover{
+    color:var(--text);
+    border-color:var(--violet);
+    background:rgba(139,124,255,.08);
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:44px auto;
+}
+
+.card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    padding:34px;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+}
+
+h2{
+    font-family:'Sora',sans-serif;
+    font-weight:600;
+    font-size:20px;
+}
+
+#atsScore{
+    font-family:'JetBrains Mono',monospace;
+    font-size:64px;
+    font-weight:600;
+    margin:22px 0;
+    text-align:center;
+}
+
+#atsScore.score-low{
+    color:var(--rose);
+    text-shadow:0 0 30px rgba(255,107,129,.35);
+}
+
+#atsScore.score-mid{
+    color:var(--amber);
+    text-shadow:0 0 30px rgba(245,184,78,.35);
+}
+
+#atsScore.score-high{
+    color:var(--teal);
+    text-shadow:0 0 30px rgba(51,224,189,.35);
+}
+
+h3{
+    margin-top:26px;
+    color:var(--violet);
+    font-family:'Sora',sans-serif;
+    font-size:15px;
+}
+
+ul{
+    margin-left:0;
+    margin-top:12px;
+    list-style:none;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+    padding:16px 20px;
+}
+
+li{
+    padding:6px 0;
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid var(--border-soft);
+    margin:26px 0;
+}
+
+button#downloadBtn{
+    margin-top:30px;
+    width:100%;
+    background:linear-gradient(135deg,var(--violet),var(--violet-dim));
+    color:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.2s ease;
+}
+
+button#downloadBtn:hover{
+    filter:brightness(1.12);
+    transform:translateY(-1px);
+}
+
+@media(max-width:600px){
+    #atsScore{
+        font-size:48px;
+    }
+}
+
+.container.report-layout{
+    max-width:1300px;
+}
+
+.report-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    align-items:start;
+}
+
+.preview-card{
+    position:sticky;
+    top:24px;
+}
+
+.preview-status{
+    color:var(--text-dim);
+    font-size:14px;
+    padding:20px 0;
+    text-align:center;
+}
+
+#resumePreview{
+    width:100%;
+    height:700px;
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+    background:#1a1d24;
+}
+
+@media(max-width:900px){
+    .report-layout{
+        grid-template-columns:1fr;
+    }
+    .preview-card{
+        position:static;
+    }
+    #resumePreview{
+        height:500px;
+    }
+}
+
+/* ===========================
+   Score Breakdown
+=========================== */
+.breakdown-row{
+    margin-bottom:16px;
+}
+
+.breakdown-label{
+    display:flex;
+    justify-content:space-between;
+    font-size:13.5px;
+    color:var(--text-dim);
+    margin-bottom:6px;
+}
+
+.breakdown-bar{
+    width:100%;
+    height:8px;
+    background:rgba(255,255,255,.07);
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.breakdown-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--violet),var(--teal));
+    border-radius:6px;
+    transition:width .4s ease;
+}
+
+.breakdown-empty{
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+/* ===========================
+   Required vs Optional Missing Skills
+=========================== */
+#requiredMissingSkills{
+    border-left:3px solid var(--rose);
+}
+
+#requiredMissingSkills li{
+    color:var(--text);
+}
+
+#requiredMissingSkills li::marker{
+    color:var(--rose);
+}
+
+#optionalMissingSkills{
+    border-left:3px solid var(--border);
+    opacity:.75;
+}
+
+#optionalMissingSkills li{
+    color:var(--text-dim);
+    font-size:13.5px;
+}
+
+#optionalMissingSkills li::marker{
+    color:var(--text-faint, var(--text-dim));
+}
+
+.breakdown-caption{
+    font-size:12px;
+    color:var(--text-dim);
+    font-style:italic;
+    margin-top:4px;
+}
