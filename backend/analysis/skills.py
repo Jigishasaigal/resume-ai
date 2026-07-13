@@ -1,8 +1,5 @@
 import re
 
-# Canonical skill name -> list of aliases/variant spellings that should
-# all count as that skill. Add new variants here as you find gaps —
-# this is the single place skill recognition is defined.
 SKILLS = {
 
     "java": ["java"],
@@ -85,9 +82,7 @@ def clean_text(text: str):
 
     text = text.lower()
 
-    # Keep hyphens — stripping them broke matching for anything with a
-    # hyphenated name (e.g. "scikit-learn" would silently become
-    # "scikit learn" and never match the literal alias again).
+
     text = re.sub(r"[^a-z0-9+#.\-\s]", " ", text)
 
     return text

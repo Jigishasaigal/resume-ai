@@ -1,4 +1,4 @@
-const API_URL = "https://resume-ai-backend-v718.onrender.com";
+const API_URL = "https://resume-ai-backend-v7l8.onrender.com";
 
 
 // ======================================

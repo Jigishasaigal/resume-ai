@@ -3,10 +3,6 @@ import fitz
 
 def extract_text_from_pdf(pdf_source):
 
-    # Accepts either a file path (str) or raw PDF bytes. The bytes path
-    # is what lets uploads be read straight from memory/DB without ever
-    # touching disk — needed since production hosting typically has an
-    # ephemeral filesystem.
 
     try:
 

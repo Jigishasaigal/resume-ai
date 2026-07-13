@@ -37,10 +37,6 @@ class ResumeVersionResponse(BaseModel):
 
     suggestions: str
 
-    # Added: raw JSON string of the score breakdown (skills,
-    # experience, education, projects, keyword_density). Frontend
-    # JSON.parses this the same way it already splits matched_skills
-    # on commas.
     score_breakdown: str | None = None
 
     required_missing_skills: str | None = None

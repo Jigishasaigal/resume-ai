@@ -40,8 +40,6 @@ class ResumeVersion(Base):
         nullable=False
     )
 
-    # Added: optional user-given label (e.g. "Google Application Draft")
-    # shown instead of the generic "Version N" when present.
     version_name = Column(
         String,
         nullable=True
@@ -52,19 +50,11 @@ class ResumeVersion(Base):
         nullable=False
     )
 
-    # Deprecated: previously the on-disk path to the uploaded PDF.
-    # New uploads store the file directly in pdf_data instead, since
-    # local disk storage doesn't survive restarts on most hosting
-    # platforms. Left here (nullable) so old rows created before this
-    # change still have a value if you ever need it.
     pdf_path = Column(
         String,
         nullable=True
     )
 
-    # Added: the actual PDF file bytes, stored directly in Postgres.
-    # This replaces on-disk storage so uploaded resumes survive
-    # redeploys/restarts on hosting with an ephemeral filesystem.
     pdf_data = Column(
         LargeBinary,
         nullable=True
@@ -90,17 +80,11 @@ class ResumeVersion(Base):
         nullable=True
     )
 
-    # Added: stores the per-category score breakdown (skills,
-    # experience, education, projects, keyword_density) as a JSON
-    # string. ats.py already computes this on every upload — it was
-    # just never being saved, so report.html could never show it.
     score_breakdown = Column(
         Text,
         nullable=True
     )
 
-    # Added: comma-separated missing skills split by whether the JD
-    # listed them under a "Required" vs "Preferred/Optional" section.
     required_missing_skills = Column(
         Text,
         nullable=True

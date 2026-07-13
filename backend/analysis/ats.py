@@ -9,11 +9,6 @@ from analysis.keywords import keyword_density_score
 
 def find_alternative_groups(jd_text):
 
-    # Detects skills listed as alternatives in the job description, e.g.
-    # "React or Angular", "AWS, Azure or GCP" — so that having any ONE
-    # of the group counts as satisfying it, instead of demanding all of
-    # them. Returns a list of sets, each set being one alternative group
-    # (using canonical skill names).
 
     text = jd_text.lower()
 
@@ -92,10 +87,6 @@ def find_alternative_groups(jd_text):
 
 def split_required_optional(jd_text):
 
-    # Splits a JD into "required" and "preferred/optional" sections
-    # based on common section headers. If no optional-style header is
-    # found, the whole JD is treated as required — matching the prior
-    # behavior for job descriptions that don't separate the two.
 
     lines = jd_text.split("\n")
 
@@ -166,9 +157,6 @@ def split_required_optional(jd_text):
 
 def _score_section(resume_skills, section_text):
 
-    # Computes matched/missing skills (alternative-group aware) for one
-    # section of the JD, plus a satisfied/total requirement count used
-    # for weighting the overall skills score.
 
     section_skills = set(
 
@@ -303,11 +291,7 @@ def calculate_ats_score(resume_text, jd_text):
 
         )
 
-        # A skill can legitimately appear in both the Required and
-        # Optional sections of a JD (e.g. "Git" required, "GitHub"
-        # listed again under preferred). When that happens, it should
-        # only show up once — as required, since that's the stricter
-        # classification.
+
         optional_result["missing"] = sorted(
 
             set(optional_result["missing"])
@@ -360,10 +344,7 @@ def calculate_ats_score(resume_text, jd_text):
 
         )
 
-        # Required skills count for 80% of the skills score, optional
-        # (preferred/nice-to-have) skills for 20% — a JD that clearly
-        # separates the two shouldn't penalize you as hard for missing
-        # something it explicitly labeled as not required.
+
         skills = (
 
             required_ratio * 0.8
@@ -376,8 +357,7 @@ def calculate_ats_score(resume_text, jd_text):
 
     else:
 
-        # No explicit optional section detected — behave the same as
-        # before this feature existed.
+
         skills = required_ratio * 100
 
     matched_skills = sorted(
