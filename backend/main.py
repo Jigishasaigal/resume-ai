@@ -48,9 +48,9 @@ app.add_middleware(
         "http://127.0.0.1:5500",
         "http://localhost:63342",
         "http://127.0.0.1:63342",
-        "*"      # temporary while deploying
+        "https://resume-ai-frontend-jezz.onrender.com"
     ],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
 )
