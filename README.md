@@ -1,6 +1,8 @@
-# 🚀 ResumeAI - AI Resume Matcher
+# ResumeMatch: Resume and Job Application Management System
 
-ResumeAI is an AI-powered Resume Analyzer and ATS Resume Matcher built using FastAPI, PostgreSQL, Docker, and JavaScript. It analyzes resumes against job descriptions, calculates ATS compatibility scores, identifies missing skills, manages multiple resume versions, and helps users optimize their resumes for different job roles.
+ResumeMatch is a web-based Resume Analysis and Job Application Management System built using FastAPI, PostgreSQL, Docker, and JavaScript. It helps users evaluate resumes against job descriptions, calculate ATS compatibility scores, identify missing skills, generate improvement suggestions, manage multiple resume versions, compare resumes, and track job applications.
+
+The application uses rule-based evaluation techniques, predefined skill aliases, regular expressions, and weighted scoring to analyze resume compatibility.
 
 ---
 
@@ -20,60 +22,60 @@ https://hub.docker.com/r/jigisha77/ai-resume-matcher-backend
 
 ---
 
-# Features
+## Features
 
-- User Authentication (JWT)
+- User Authentication using JWT
 - Resume Upload (PDF)
-- ATS Score Calculation
-- Resume vs Job Description Analysis
-- Skill Matching
-- Required & Optional Missing Skills
-- Resume Suggestions
+- ATS Compatibility Score Calculation
+- Resume and Job Description Analysis
+- Skill Extraction and Matching
+- Required and Optional Missing Skills Identification
+- Rule-Based Resume Improvement Suggestions
 - Resume Version Management
 - Resume Comparison
-- Application Tracker
-- Resume Preview
+- Job Application Tracking
+- Resume Preview and Download
 - Report Generation
-- Responsive UI
+- Responsive User Interface
 
 ---
 
-# Tech Stack
+## Tech Stack
 
-## Frontend
-
+### Frontend
 - HTML
 - CSS
 - JavaScript
 
-## Backend
-
+### Backend
+- Python
 - FastAPI
 - SQLAlchemy
-- PostgreSQL
-- JWT Authentication
 - PyMuPDF
+- JWT Authentication
+- Passlib / bcrypt
 
-## Machine Learning
+### Resume Analysis
+- Rule-Based ATS Scoring
+- Regular Expressions
+- Predefined Skill Dictionary and Aliases
+- Weighted Scoring Mechanism
+- Rule-Based Suggestions
 
-- Scikit-learn
+### Database
+- PostgreSQL
 
-## Database
-
-- PostgreSQL (Neon)
-
-## Deployment
-
+### Deployment
 - Render
 - Docker
 - Docker Hub
 
 ---
 
-# Project Structure
+## Project Structure
 
-```
-AI-Resume-Matcher
+```text
+ResumeMatch
 │
 ├── backend
 │   ├── analysis
@@ -100,38 +102,38 @@ AI-Resume-Matcher
 
 ---
 
-# Architecture
+## Architecture
 
-```
+```text
 Browser
-    │
-    ▼
+   │
+   ▼
 Frontend (Render)
-    │
-    ▼
+   │
+   ▼
 FastAPI Backend (Render)
-    │
-    ▼
-Neon PostgreSQL
+   │
+   ▼
+PostgreSQL Database
 ```
 
 ---
 
-# Docker
+## Docker
 
-## Build
+### Build
 
 ```bash
 docker build -t ai-resume-matcher-backend ./backend
 ```
 
-## Run
+### Run
 
 ```bash
 docker run -p 8000:8000 ai-resume-matcher-backend
 ```
 
-## Docker Compose
+### Docker Compose
 
 ```bash
 docker compose up --build
@@ -139,9 +141,9 @@ docker compose up --build
 
 ---
 
-# Local Installation
+## Local Installation
 
-## Clone
+### Clone Repository
 
 ```bash
 git clone https://github.com/Jigishasaigal/resume-ai.git
@@ -149,7 +151,7 @@ git clone https://github.com/Jigishasaigal/resume-ai.git
 cd resume-ai
 ```
 
-## Backend
+### Backend Setup
 
 ```bash
 cd backend
@@ -159,11 +161,11 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-## Frontend
+### Frontend Setup
 
-Open
+Open:
 
-```
+```text
 frontend/index.html
 ```
 
@@ -171,47 +173,56 @@ using Live Server.
 
 ---
 
-# API Endpoints
+## API Endpoints
 
-Authentication
+### Authentication
+- POST `/auth/signup`
+- POST `/auth/login`
+- GET `/auth/me`
 
-- POST /auth/signup
-- POST /auth/login
-- GET /auth/me
-
-Resume
-
+### Resume Management
 - Upload Resume
-- Compare Resume Versions
+- Manage Resume Groups
+- Manage Resume Versions
+- Resume Comparison
 - Resume Report
+- Resume Download
 
-Applications
-
+### Applications
 - Create Application
 - View Applications
+- Update Application
+- Delete Application
 
 ---
 
-## Optimization
+## Docker Optimization
 
-- Reduced Docker image size from **8.67 GB** to **797 MB** by removing unused ML dependencies and adding a `.dockerignore` file.
-
-# Future Improvements
-
-- AI-powered resume rewriting
-- LLM-based career recommendations
-- LinkedIn profile analysis
-- Resume templates
-- Interview preparation assistant
+- Reduced Docker image size from **8.67 GB to 797 MB**.
+- Removed unused machine learning dependencies.
+- Introduced a `.dockerignore` file to exclude unnecessary files from the Docker build context.
+- Improved deployment efficiency by reducing the container image size.
 
 ---
 
-# Author
+## Future Improvements
+
+- AI/LLM-based Resume Rewriting and Recommendations
+- Semantic Skill Matching
+- OCR Support for Scanned Resumes
+- LinkedIn Profile Analysis
+- Advanced Resume Templates
+- Interview Preparation Assistant
+- Advanced Job Application Analytics
+
+---
+
+## Author
 
 **Jigisha Saigal**
 
-GitHub:
+GitHub:  
 https://github.com/Jigishasaigal
 
-Docker Hub:
-https://hub.docker.com/u/jigisha77
+Docker Hub:  
+https://hub.docker.com/u/jigisha77no

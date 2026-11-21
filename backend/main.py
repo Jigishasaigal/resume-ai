@@ -30,11 +30,8 @@ Base.metadata.create_all(bind=engine)
 # =====================================
 
 app = FastAPI(
-
-    title="ResumeAI",
-
+    title="ResumeMatch: Resume and Job Application Management System",
     version="2.0.0"
-
 )
 
 # =====================================
@@ -88,7 +85,7 @@ def home():
 
     return {
 
-        "message": "ResumeAI Backend Running",
+        "message": "ResumeMatch Backend Running",
 
         "version": "2.0.0"
 

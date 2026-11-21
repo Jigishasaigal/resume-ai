@@ -111,7 +111,7 @@ h1,h2,h3{
 }
 
 .sidebar h2::after{
-    content:"ATS ANALYZER";
+    content:"RESUME & CAREER MANAGER";
     display:block;
     font-family:var(--font-mono);
     font-size:9px;
